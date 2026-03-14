@@ -5,3 +5,9 @@ numpy
 xarray
 redis
 python-dotenv
+zarr
+dask
+fsspec 
+s3fs 
+netcdf4
+gcsfs
