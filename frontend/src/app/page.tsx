@@ -7,7 +7,7 @@ import { Map } from "react-map-gl/maplibre";
 import dynamic from "next/dynamic";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
-const API = "http://localhost:8000";
+const API = "https://algo-hackers.vercel.app";
 
 // Types
 type ViewMode = "heatmap" | "3d" | "compare" | "wind" | "anomaly";
