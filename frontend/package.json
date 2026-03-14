@@ -9,15 +9,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@deck.gl/aggregation-layers": "^9.2.11",
+    "@deck.gl/layers": "^9.0.33",
+    "@deck.gl/react": "^9.2.11",
+    "maplibre-gl": "^4.7.1",
     "next": "16.1.6",
+    "plotly.js": "^2.35.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "@deck.gl/react": "^9.0.33",
-    "@deck.gl/aggregation-layers": "^9.0.33",
-    "@deck.gl/layers": "^9.0.33",
-    "react-map-gl": "^7.1.7",
-    "maplibre-gl": "^4.7.1",
-    "plotly.js": "^2.35.2",
+    "react-map-gl": "^7.1.9",
     "react-plotly.js": "^2.6.0"
   },
   "devDependencies": {
