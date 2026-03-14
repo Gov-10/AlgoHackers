@@ -11,3 +11,5 @@ fsspec
 s3fs 
 netcdf4
 gcsfs
+langchain
+langchain-groq

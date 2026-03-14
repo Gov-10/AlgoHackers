@@ -258,4 +258,5 @@ app.add_middleware(
 
 
 
-
+from summarizer import router as summarizer_router
+app.include_router(summarizer_router)
