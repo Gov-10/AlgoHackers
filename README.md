@@ -6,6 +6,8 @@ PyClimaExplorer is a modern web platform that enables users to **explore large-s
 It transforms complex **NetCDF climate datasets** into intuitive spatial and temporal insights using an interactive dashboard and AI-powered summaries.
 
 ---
+## DEMO VIDEO
+![Demo video](https://www.youtube.com/watch?v=3otNNBaM5rk)
 
 ## 🚀 Features
 
