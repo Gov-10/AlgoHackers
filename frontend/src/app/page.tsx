@@ -7,7 +7,7 @@ import { Map } from "react-map-gl/maplibre";
 import dynamic from "next/dynamic";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
-const API = "https://algo-hackers.vercel.app";
+const API = "https://omyrbh426k.execute-api.ap-south-1.amazonaws.com";
 
 // Types
 type ViewMode = "heatmap" | "3d" | "compare" | "wind" | "anomaly";
@@ -436,24 +436,51 @@ function Section({ title, children, last }: { title: string; children: React.Rea
 }
 
 function speakSummary(text: string) {
-  const utter = new SpeechSynthesisUtterance(text);
+  if (!("speechSynthesis" in window)) return;
 
-  utter.rate = 0.95;
-  utter.pitch = 1.05;
-  utter.volume = 1;
+  const synth = window.speechSynthesis;
 
-  const voices = speechSynthesis.getVoices();
+  const speak = () => {
+    const voices = synth.getVoices();
 
-  // choose best available voice
-  const voice =
-    voices.find(v => v.name.includes("Google")) ||
-    voices.find(v => v.lang.includes("en")) ||
-    voices[0];
+    const voice =
+      voices.find(v => v.name.includes("Google US English")) ||
+      voices.find(v => v.name.includes("Microsoft Aria")) ||
+      voices.find(v => v.name.includes("Microsoft Jenny")) ||
+      voices.find(v => v.lang === "en-US") ||
+      voices[0];
 
-  if (voice) utter.voice = voice;
+    const sentences = text
+      .replace(/\n/g, " ")
+      .split(/(?<=[.?!])\s+/);
 
-  speechSynthesis.cancel();
-  speechSynthesis.speak(utter);
+    synth.cancel();
+
+    sentences.forEach((sentence, i) => {
+      const utter = new SpeechSynthesisUtterance(sentence.trim());
+
+      if (voice) utter.voice = voice;
+
+      utter.rate = 1;
+      utter.pitch = 1;
+      utter.volume = 1;
+
+      // slight delay between sentences
+      utter.onend = () => {
+        if (i < sentences.length - 1) {
+          setTimeout(() => {}, 120);
+        }
+      };
+
+      synth.speak(utter);
+    });
+  };
+
+  if (synth.getVoices().length === 0) {
+    synth.onvoiceschanged = speak;
+  } else {
+    speak();
+  }
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
