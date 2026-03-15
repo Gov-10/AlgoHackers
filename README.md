@@ -52,7 +52,7 @@ PyClimaExplorer solves this by providing an **interactive visualization platform
 
 
 ## 🏗 Architecture
-
+![System Architecture](./docs/architecture.png)
 
 ### Key Components
 
