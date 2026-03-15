@@ -52,7 +52,6 @@ PyClimaExplorer solves this by providing an **interactive visualization platform
 
 
 ## 🏗 Architecture
-file:///home/govind/Pictures/Screenshots/Screenshot%20from%202026-03-13%2018-26-56.png
 
 
 ### Key Components
