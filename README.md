@@ -168,3 +168,6 @@ Benefits:
 ## LOCUST LOAD TEST RESULTS (demonstration of API gateway rate limiting)
 ![Load Testing](./docs/locust.png)
 ![Failure report](./docs/failure.png)
+Load testing was performed using **Locust** to simulate concurrent users accessing the API through AWS API Gateway. The results demonstrate the effectiveness of the gateway's rate limiting configuration. While the system generated over **1000 requests per second**, excess traffic was automatically throttled by API Gateway, returning **HTTP 429 (Too Many Requests)** responses before reaching the backend.
+
+Latency metrics remained stable during the test. The **p50 latency (~70–90 ms)** represents the median response time experienced by most users, while the **p95 latency (~260–280 ms)** shows the response time for the slowest 5% of requests. The relatively small gap between these values indicates that the system maintains consistent performance even under heavy load. This demonstrates that API Gateway successfully protects the backend from overload while keeping response times predictable.
