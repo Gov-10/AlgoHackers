@@ -163,4 +163,8 @@ Benefits:
 - Advanced anomaly detection
 - Multi-dataset comparison
 - Collaborative climate analysis tools
-  
+ 
+--- 
+## LOCUST LOAD TEST RESULTS (demonstration of API gateway rate limiting)
+![Load Testing](./docs/locust.png)
+![Failure report](./docs/failure.png)
