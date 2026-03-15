@@ -7,7 +7,7 @@ It transforms complex **NetCDF climate datasets** into intuitive spatial and tem
 
 ---
 ## DEMO VIDEO
-![Demo video](https://www.youtube.com/watch?v=3otNNBaM5rk)
+[![Watch Demo](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=3otNNBaM5rk)
 
 ## 🚀 Features
 
